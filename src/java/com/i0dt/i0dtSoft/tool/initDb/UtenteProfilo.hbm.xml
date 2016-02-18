@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<hibernate-mapping>
+	<class name="com.i0dt.i0dtSoft.core.model.UtenteProfilo" table="UTENTE_PROFILO">
+		<id name="id" column="ID_P">
+			<generator class="native" />
+		</id>
+		<property name="codiceUtente" column="codice_utente" />
+		<property name="codiceProfilo" column="codice_profilo" />
+	</class>
+</hibernate-mapping>
