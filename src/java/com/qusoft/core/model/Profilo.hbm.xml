@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<hibernate-mapping>
+	<class name="com.qusoft.core.model.Profilo" table="PROFILO">
+		<id name="id" column="ID_P">
+			<generator class="native" />
+		</id>
+		<property name="codice" column="codice" />
+		<property name="descrizione" column="desc" />
+	</class>
+</hibernate-mapping>
