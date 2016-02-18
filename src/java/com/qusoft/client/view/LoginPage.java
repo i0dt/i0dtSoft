@@ -80,7 +80,7 @@ public class LoginPage {
             
         });
         try{
-            com.qusoft.server.QServer.start(new String[]{""});
+            //com.qusoft.server.QServer.start(new String[]{""});
         }catch(Exception e){
             actiontarget.setFill(Color.FIREBRICK);
             final StringBuilder sb=new StringBuilder();
