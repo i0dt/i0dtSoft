@@ -1,13 +1,28 @@
 package com.i0dt.i0dtSoft.core.model;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class UtenteProfilo implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity
+@Table(name = "UTENTE_PROFILO")
+public class UtenteProfilo{
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID_P")
 	private int id;
+	
+	@Column(name = "CODICE_UTENTE", nullable = false)
 	private String codiceUtente;
+	
+	@Column(name = "CODICE_PROFILO", nullable = false)
 	private String codiceProfilo;
 
+	
 	public int getId() {
 		return id;
 	}

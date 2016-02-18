@@ -1,17 +1,32 @@
 package com.i0dt.i0dtSoft.core.model;
 
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
-public class Utente implements Serializable {
-	private static final long serialVersionUID = 1L;
+@Entity
+@Table(name = "UTENTE")
+public class Utente {
+	
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "ID_P")
 	private int id;
-	private String codice;
-	private String password;
-	private String nome;
-	private String cognome;
 
-	public Utente() {
-	}
+	@Id
+	@Column(name = "CODICE", unique = true, nullable = false)
+	private String codice;
+	
+	@Column(name = "PASS", nullable = false)
+	private String password;
+	
+	@Column(name = "NOME", nullable = true)
+	private String nome;
+	
+	@Column(name = "COGNOME", nullable = true)
+	private String cognome;
 
 	public int getId() {
 		return id;
@@ -51,5 +66,14 @@ public class Utente implements Serializable {
 
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
+	}
+	
+	@Override
+	public String toString(){
+		final StringBuilder sb=new StringBuilder();
+		sb.append("[" +this.getClass().getCanonicalName());
+		sb.append("nome:"+nome);
+		sb.append("]");
+		return sb.toString();
 	}
 }

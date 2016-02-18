@@ -2,6 +2,7 @@ package com.i0dt.i0dtSoft.core.service;
 
 import java.util.List;
 
+import com.i0dt.i0dtSoft.core.dao.UtenteDao;
 import com.i0dt.i0dtSoft.core.model.Utente;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Service("utenteService")
 @Transactional
 public class UtenteServiceImpl implements UtenteService {
-	 @Autowired
-	private UtenteService dao;
-	
+	@Autowired
+	private UtenteDao dao;
+	 
 	@Override
 	public void saveUtente(Utente utente) {
 		dao.saveUtente(utente);

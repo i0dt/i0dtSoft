@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  
 @Configuration
 @EnableTransactionManagement
-@ComponentScan({ "com.qusoft.spring.configuration" })
+@ComponentScan({ "com.i0dt.i0dtSoft.core.configuration" })
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
  
@@ -28,7 +28,7 @@ public class HibernateConfiguration {
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
-        sessionFactory.setPackagesToScan(new String[] { "com.qusoft.db" });
+        sessionFactory.setPackagesToScan(new String[] { "com.i0dt.i0dtSoft.core.model" });
         sessionFactory.setHibernateProperties(hibernateProperties());
         return sessionFactory;
      }
